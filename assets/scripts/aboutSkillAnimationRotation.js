@@ -34,13 +34,14 @@ function aboutSkillAnimationRotation(){
     
     const setSlider = () => {
 
-        const main = document.querySelector('main');
-        main.removeEventListener('mouseenter', mouseMove);
-            console.log('about');
-        document.removeEventListener('mousemove', followMouse);
-        main.style.transform = `rotateX(0deg) rotateY(0deg)`;
-        main.style.boxShadow = `0px 0px 20px rgba(64, 6, 112, 0.8)`;
-
+        if (!isMobileDevice()) {
+            const main = document.querySelector('main');
+            main.removeEventListener('mouseenter', mouseMove);
+                console.log('about');
+            document.removeEventListener('mousemove', followMouse);
+            main.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            main.style.boxShadow = `0px 0px 20px rgba(64, 6, 112, 0.8)`;
+        }
       
         listElement.style.setProperty('--before-background-image', `url(${logoURLarray[active]})`);
        
@@ -60,14 +61,15 @@ function aboutSkillAnimationRotation(){
         prevBtn.classList.remove('d-none');
         if(active == lastPosition) nextBtn.classList.add('d-none');
         if(active == firstPosition) prevBtn.classList.add('d-none');
-
-        setTimeout(()=>{
-            main.addEventListener('mouseenter', mouseMove);
-            console.log('body');
-            document.addEventListener('mousemove', followMouse);
         
-        },2000);
-        
+        if (!isMobileDevice()) {
+            setTimeout(()=>{
+                main.addEventListener('mouseenter', mouseMove);
+                console.log('body');
+                document.addEventListener('mousemove', followMouse);
+            
+            },2000);
+        }
         
     }
     setSlider();

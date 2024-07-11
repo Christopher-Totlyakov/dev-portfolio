@@ -2,35 +2,45 @@
 
 const main = document.querySelector('main');
 
+function isMobileDevice() {
+    return window.innerWidth <= 768; // Можете да промените прага според нуждите си
+    
+}
 let mouseMove = () => {
     document.addEventListener('mousemove', followMouse);
 }
-        main.addEventListener('mouseenter', mouseMove);
-        console.log('body');
+console.log(isMobileDevice());
+if (!isMobileDevice()) {
 
-        main.addEventListener('mouseleave', () => {
-            document.removeEventListener('mousemove', followMouse);
-            main.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
-            main.style.boxShadow = '0 4px 8px rgba(64, 6, 112, 0.2)';
-        });
+    
 
-        function followMouse(e) {
-            const rect = main.getBoundingClientRect();
-            const offsetX = e.clientX - rect.left;
-            const offsetY = e.clientY - rect.top;
+    main.addEventListener('mouseenter', mouseMove);
+    console.log('body');
 
-            const halfWidth = rect.width / 2;
-            const halfHeight = rect.height / 2;
+    main.addEventListener('mouseleave', () => {
+        document.removeEventListener('mousemove', followMouse);
+        main.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+        main.style.boxShadow = '0 4px 8px rgba(64, 6, 112, 0.2)';
+    });
 
-            const dx = offsetX - halfWidth;
-            const dy = offsetY - halfHeight;
+    function followMouse(e) {
+        const rect = main.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left;
+        const offsetY = e.clientY - rect.top;
 
-            const tiltX = (dy / halfHeight) * 10; 
-            const tiltY = -(dx / halfWidth) * 10; 
+        const halfWidth = rect.width / 2;
+        const halfHeight = rect.height / 2;
 
-            const shadowX = (dx / halfWidth) * 20; 
-            const shadowY = (dy / halfHeight) * 20; 
+        const dx = offsetX - halfWidth;
+        const dy = offsetY - halfHeight;
 
-            main.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-            main.style.boxShadow = `${shadowX}px ${shadowY}px 20px rgba(64, 6, 112, 0.8)`;
-        }
+        const tiltX = (dy / halfHeight) * 10; 
+        const tiltY = -(dx / halfWidth) * 10; 
+
+        const shadowX = (dx / halfWidth) * 20; 
+        const shadowY = (dy / halfHeight) * 20; 
+
+        main.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+        main.style.boxShadow = `${shadowX}px ${shadowY}px 20px rgba(64, 6, 112, 0.8)`;
+    }
+}

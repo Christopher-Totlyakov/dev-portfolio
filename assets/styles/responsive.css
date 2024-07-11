@@ -26,7 +26,7 @@
         margin: 0;
     }
     .URLsContent > *{
-        font-size: 0.8em;
+        font-size: 1em;
     }
     .svgIcon{
         width: 20px;
@@ -129,7 +129,7 @@
         line-height: 24px;
     }
     .URLsContent > *{
-        font-size: 0.6em;
+        font-size: 0.7em;
     }
     .svgIcon{
         width: 15px;

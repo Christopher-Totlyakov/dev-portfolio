@@ -109,7 +109,7 @@ header > h4{
     top: 0;
     border-radius: 25px 76px  25px 76px;
     opacity: 0;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     border: 2px solid white;
