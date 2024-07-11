@@ -1,0 +1,155 @@
+header{
+    position: relative;
+    display: flex;
+    padding: 2em 2em 1em 2em;
+    z-index: 1;
+}
+header::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 2px dashed white; 
+    z-index: 2; 
+    pointer-events: none; 
+}
+.main-nav > ul{
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    padding: 0;
+    height: 100%;
+}
+li {
+    font-size: 1.4em;
+    list-style-type: none;
+}
+
+.main-nav > ul a, .menu-box > ul a{
+    margin-left: 1.5em;
+    text-decoration: none;
+    color: white;
+    text-shadow: 2px 4px 10px rgb(255, 255, 255);
+    padding: 8px;
+}
+.main-nav > ul a:hover{
+    background-color: rgb(143, 109, 182);
+    transition: background-color 0.4s ease; 
+    border-radius: 20%;
+    border: 2px dashed white;
+}
+header > h4{
+    margin: 0;
+}
+
+#phone-nav{
+    display: none;
+}
+
+#phone-nav-icon {
+    width: 40px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    height: 30px;
+    z-index: 2;
+}
+#phone-nav-icon .nav-icon-line {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 32px;
+    background: #DADADA;
+    left: unset;
+    right: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+    border-radius: 25%;
+}
+
+
+#phone-nav-icon .nav-icon-line.first-line {
+    top: 0px;
+}
+#phone-nav-icon .nav-icon-line.second-line {
+    top: 10px;
+}
+#phone-nav-icon .nav-icon-line.third-line {
+    top: 20px;
+}
+
+#phone-nav-icon .nav-icon-line.first-line,
+#phone-nav-icon .nav-icon-line.second-line,
+#phone-nav-icon .nav-icon-line.third-line {
+    transform-origin: left center;
+}
+
+#phone-nav-icon.open .nav-icon-line.first-line {
+    transform: rotate(40deg);
+}
+#phone-nav-icon.open .nav-icon-line.second-line {
+    width: 0%;
+    opacity: 0;
+}
+#phone-nav-icon.open .nav-icon-line.third-line {
+    transform: rotate(-40deg);
+}
+
+.menu-box{
+    position: absolute;
+    height: 450%;
+    width: 40%;
+    background-color: #ad3ac49c;
+    z-index: 1;
+    background-position: left;
+    right: 0;
+    top: 0;
+    border-radius: 25px 76px  25px 76px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+}
+.transition-exit {
+    animation: fadeOut 0.8s ease-in-out 1;
+    
+}
+.transition-enter {
+    animation: fadeIn 0.8s ease-in-out 1;
+}
+@keyframes fadeOut {
+    from {
+        clip-path: circle(150% at 100% 0px);
+        opacity: 1;
+    }
+    to {
+        clip-path: circle(0% at 100% 0px);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        clip-path: circle(0% at 100% 0px);
+        opacity: 0;
+    }
+    to {
+        clip-path: circle(150% at 100% 0px);
+        opacity: 1;
+    }
+}
+
+
+.menu-box > ul a{
+    padding: 0;
+   margin: 0 1em 0 0.5em;
+   font-size: 1.6em;
+}
+
+.menu-box ul li{
+    margin-bottom: 0.5em;
+}

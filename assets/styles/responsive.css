@@ -1,0 +1,251 @@
+
+@media (max-width: 1100px) {
+    #home-container{
+        gap: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    h1 { font-size: 2em; } /* 14 * 2.8 = 39px */
+    h2 { font-size: 1.8em; } /* 14 * 2.2 = 31px */
+    h3 { font-size: 1.6em; } /* 14 * 1.8 = 25px */
+    h4 { font-size: 1.2em; } /* 14 * 1.6 = 22px */
+    h5 { font-size: 1em; } /* 14 * 2.2 = 17px */
+    h6 { font-size: 0.6em; }
+    #home-container{
+        gap: 0px;
+        justify-content:left;
+    }
+    #home-title {
+        position:absolute;
+        margin-top: 10%;
+        left: 60%;
+    }
+    
+    .site-title, h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+    }
+    .URLsContent > *{
+        font-size: 0.8em;
+    }
+    .svgIcon{
+        width: 20px;
+        height: 20px;
+    }
+    footer{
+        padding: 0.5em 0.5em 0.3em 2em;
+    }
+    .box {
+        width: 320px;
+        height: 450px;
+    }
+    .box .right {
+        font-size: 40px;
+        line-height: 30px;
+    }
+    #home-img-me{
+        margin-left: 20px;
+    }
+
+
+    /* about */
+    .slider .list .item .content{
+        top: 5em;
+    }
+    
+    .slider .list .item .content h2{
+        font-size: 5em;
+        top: -4%;
+    }
+    
+    .slider .list .item .content p{
+        font-size: small;
+    }
+
+    .slider .list::after{
+        right: -40px;
+        background-size: 80%;
+        
+    }
+    .slider .list::before{
+        width: 15%;
+        right: 240px; 
+        top: 46%; 
+       
+
+    }
+    .certificateButton{
+        font-size: 1em;
+        width: 140px;
+        position: absolute;
+        bottom: 450px;
+    }
+
+    .certificateConteiner > a{
+        font-size: 0.8em;
+        position:static;
+        
+    }
+    
+    .certificateConteiner{
+        position: absolute;
+        top: 20px;
+    }
+    @keyframes hoveringLogo{
+        0% {
+            top: 46%;
+            opacity: 0.3;
+        }
+        50% {
+            top: 40%;
+            opacity: 1;
+        }
+        100% {
+            top: 46%;
+            opacity: 0.3;
+        }
+    }
+    .main-nav li a{
+        margin-left: 1em;
+    }
+}
+@media (max-width: 500px) {
+    
+    .box {
+        width: 220px;
+        height: 350px;
+    }
+    #home-img-me{
+        margin: 0 auto;
+    }
+    #home-title{
+        left: 35%;
+    }
+    #home-title h1{
+        font-size: 1.8em;
+    }
+    .box .right {
+        font-size: 32px;
+        line-height: 24px;
+    }
+    .URLsContent > *{
+        font-size: 0.6em;
+    }
+    .svgIcon{
+        width: 15px;
+        height: 15px;
+    }
+    #home-container, #about-pages, #project-pages{
+        height: 511px;
+    }
+
+    /* about */
+    .slider .list .item .content{
+        margin: 0 0 0 20px;
+
+    }
+    .slider .list .item .content h2{
+        font-size: 4em;
+        left: 8%;
+    }
+    .slider .list::after{
+        right: -70px;
+        background-size: 65%;
+        
+    }
+    .slider .list::before{
+        width: 25%;
+        right: 180px; 
+        top: 52%; 
+
+    }
+    .certificateButton{
+        font-size: 0.8em;
+        width: 110px;
+        position: absolute;
+        left: 20px;
+    }
+    .slider .list .item .image{
+        bottom: -20%;
+        left: -100%;
+    }
+
+    .navPoints{
+        gap: 20px;
+    }
+    .pageNumber:not(:last-child)::after{
+        width: 40px;
+    }
+    
+    @keyframes hoveringLogo{
+        0% {
+            top: 52%;
+            opacity: 0.3;
+        }
+        50% {
+            top: 46%;
+            opacity: 1;
+        }
+        100% {
+            top: 52%;
+            opacity: 0.3;
+        }
+    }
+    .main-nav{
+        display: none;
+    }
+    #phone-nav{
+        display: block;
+        margin: 0 20px;
+    }
+    header{
+       align-items: center;
+        
+    }
+    header h4{
+        font-size: 1.6em;
+    }
+    
+}
+
+@media (max-width: 320px) {
+    /* about */
+    .slider .list .item .content h2{
+        font-size: 3em;
+    }
+    .slider .list::after{
+        right: -90px;
+        background-size: 55%;
+        
+    }
+    .slider .list::before{
+        height: 15%;
+        right: 160px; 
+        top: 60%; 
+
+    }
+    .navPoints{
+        gap: 15px;
+    }
+    .pageNumber:not(:last-child)::after{
+        width: 35px;
+    }
+
+    @keyframes hoveringLogo{
+        0% {
+            top: 60%; 
+            opacity: 0.3;
+        }
+        50% {
+            top: 56%;
+            opacity: 1;
+        }
+        100% {
+            top: 60%;
+            opacity: 0.3;
+        }
+    }
+    #phone-nav{
+        margin: 0 20px 0 10px;
+    }
+}

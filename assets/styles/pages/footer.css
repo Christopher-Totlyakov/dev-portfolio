@@ -1,0 +1,71 @@
+footer{
+    padding: 1em 2em 0.3em 2em;
+    
+    border-top: 2px solid aliceblue;
+}
+footer > p {
+    text-shadow: 
+        0 0 5px rgba(0, 0, 0),
+        0 0 10px rgba(0, 0, 0),
+        0 0 15px rgba(0, 0, 0),
+        0 0 20px rgba(0, 0, 0),
+        0 0 30px rgb(0, 0, 0),
+        0 0 40px rgba(0, 0, 0),
+        0 0 55px rgba(0, 0, 0),
+        0 0 75px rgba(0, 0, 0);
+
+    display: flex;
+    margin-top: 0.5em;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+}
+
+.github-const{
+    color: rgb(86, 156, 214);
+    font-size: 1.2em;
+}
+
+.githubLink{
+    color: rgb(48, 189, 111);
+    font-size: 1.2em;
+}
+
+footer > p a{
+    color: rgb(206, 145, 120);
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+footer > p a:hover{
+    color: rgb(255, 255, 255);
+    text-shadow: none;
+}
+.footer-githubLink-element{
+    font-size: 1.2em;
+}
+
+.icon-github{
+    width: 25px;
+    height: 25px;
+    fill: #ffffff;
+    filter: drop-shadow(0 0 5px rgba(0,0,0))
+            drop-shadow(0 0 10px rgba(0,0,0))
+
+}
+
+.icon-github:hover{
+    fill:rgb(48, 189, 111);
+}
+
+footer > p > span{
+    padding-left: 4px;
+}
+footer > p > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer-githubLink-element{
+    font-size: 1.2em;
+}

@@ -1,0 +1,12 @@
+@import url(reset.css);
+@import url(typography.css);
+
+@import url(pages/header.css);
+@import url(pages/footer.css);
+
+@import url(pages/main.css);
+@import url(pages/project.css);
+@import url(pages/about.css);
+
+@import url(responsive.css);
+

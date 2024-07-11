@@ -1,0 +1,11 @@
+#project-pages{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    height: 511.2px;
+}
+#project-pages > p {
+    font-size: 1.5em;
+}

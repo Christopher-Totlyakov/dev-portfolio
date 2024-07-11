@@ -1,0 +1,16 @@
+<header>
+    <h4>{{site.title}}</h4>
+    <nav class="main-nav">
+        {% include navigation.html %}
+    </nav>
+    <nav id="phone-nav">
+        <div id="phone-nav-icon">
+            <span class="nav-icon-line first-line"></span>
+            <span class="nav-icon-line second-line"></span>
+            <span class="nav-icon-line third-line"></span>
+        </div>
+        <div class="menu-box">
+            {% include navigation.html %}
+        </div>
+    </nav>
+</header>
