@@ -35,7 +35,7 @@ function aboutSkillAnimationRotation(){
     const setSlider = () => {
 
         const main = document.querySelector('main');
-        main.removeEventListener('mouseenter', wewe);
+        main.removeEventListener('mouseenter', mouseMove);
             console.log('about');
         document.removeEventListener('mousemove', followMouse);
         main.style.transform = `rotateX(0deg) rotateY(0deg)`;
@@ -62,7 +62,7 @@ function aboutSkillAnimationRotation(){
         if(active == firstPosition) prevBtn.classList.add('d-none');
 
         setTimeout(()=>{
-            main.addEventListener('mouseenter', wewe);
+            main.addEventListener('mouseenter', mouseMove);
             console.log('body');
             document.addEventListener('mousemove', followMouse);
         

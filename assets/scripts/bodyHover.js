@@ -2,10 +2,10 @@
 
 const main = document.querySelector('main');
 
-let wewe = () => {
+let mouseMove = () => {
     document.addEventListener('mousemove', followMouse);
 }
-        main.addEventListener('mouseenter', wewe);
+        main.addEventListener('mouseenter', mouseMove);
         console.log('body');
 
         main.addEventListener('mouseleave', () => {
