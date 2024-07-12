@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let links = document.querySelectorAll('nav a');
     const main = document.querySelector('main'); 
 
-
+//navigakiata v istoriata napred nazad
     let isAnimating = false;
 
     links.forEach(link => {
@@ -29,14 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 main.classList.remove('page-transition-exit');
                 main.style.opacity = '0';
 
-               
-                fetchPage(tab, x, y);
+            let url = `/${tab}/`;
+             // Актуализираме URL адреса с HTML5 History API
+             history.pushState({}, '', url);//
+                fetchPage(url, x, y);
             }, { once: true });
         });
     });
 
-    function fetchPage(tab, x, y) {
-        let url = `/${tab}/`; 
+    function fetchPage(url, x, y) {
 
         fetch(url)
             .then(response => response.text())
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }else if (url == '/about/') {
                     main.style.backgroundColor = 'rgb(24, 2, 51)';
                     aboutSkillAnimationRotation();
+                    openPDF();
                 }
 
                 main.style.setProperty('--x', `${x}px`);
@@ -65,13 +67,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     isAnimating = false; 
                 }, { once: true });
 
-                // Актуализираме URL адреса с HTML5 History API
-                history.pushState(null, null, url);
-                
+               
               
             })
             .catch(error => {
                 console.error('Error fetching page:', error);
             });
     }
+     // Обработчик за събитието popstate
+    window.addEventListener('popstate', () => {
+        
+
+            let rect = main.getBoundingClientRect();
+            let x = rect.width / 2; // Центрирано по хоризонтал
+            let y = rect.height / 2; // Центрирано по вертикал
+            fetchPage(window.location.pathname, x, y);
+        
+    });
 });

@@ -3,94 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>
-
+    <title>History Navigation Example</title>
+    <style>
+        .content { margin: 20px; }
+        nav a { margin: 0 10px; }
+    </style>
 </head>
 <body>
-    
-    <main>
-        
-        <a href="#" class="certificateButton">Basics</a>
-<div id="pdfViewer" style="width: 100%; height: 100vh;"></div>
-
-
-        
-    </main>
+    <nav>
+        <a href="/" class="nav-link" data-content="Home content loaded.">Home</a>
+        <a href="/about" class="nav-link" data-content="About content loaded.">About</a>
+        <a href="/contact" class="nav-link" data-content="Contact content loaded.">Contact</a>
+    </nav>
+    <div class="content" id="content"></div>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const certificateButton = document.querySelector('.certificateButton');
-            const pdfViewer = document.getElementById('pdfViewer');
-        
-            certificateButton.addEventListener('click', (event) => {
-                event.preventDefault();
-                const url = '/assets/certificate/Programming Basics - July 2022 - Certificate.pdf';
-                loadPDF(url);
-            });
-        
-            function loadPDF(url) {
-                const loadingTask = pdfjsLib.getDocument(url);
-                loadingTask.promise.then((pdf) => {
-                    pdfViewer.innerHTML = ''; // Clear previous content
-                    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                        renderPage(pdf, pageNum);
-                    }
-                }, (reason) => {
-                    console.error(reason);
-                });
-            }
-        
-            function renderPage(pdf, pageNum) {
-                pdf.getPage(pageNum).then((page) => {
-                    const scale = 1.5;
-                    const viewport = page.getViewport({ scale });
-        
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-        
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-        
-                    const pageDiv = document.createElement('div');
-                    pageDiv.className = 'page';
-                    pageDiv.appendChild(canvas);
-                    pdfViewer.appendChild(pageDiv);
-        
-                    page.render(renderContext).promise.then(() => {
-                        console.log(`Page ${pageNum} rendered`);
-                    });
-                });
-            }
+    const contentElement = document.getElementById('content');
+    
+    function loadContent(url) {
+        // Симулираме зареждане на съдържание въз основа на URL
+        const link = document.querySelector(`a[href='${url}']`);
+        if (link) {
+            const dataContent = link.getAttribute('data-content');
+            contentElement.textContent = dataContent;
+        }
+    }
+
+    // Обработчик за клик на линковете за навигация
+    document.querySelectorAll('a.nav-link').forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const url = event.target.href;
+
+            // Променяме историята и зареждаме съдържанието
+            window.history.pushState({}, '', url);
+            loadContent(url);
         });
-        </script>
+    });
+
+    // Обработчик за събитието popstate
+    window.addEventListener('popstate', () => {
+        console.log(window.location.pathname);
+        loadContent(window.location.pathname);
         
-        
-        
-        
+    });
+
+    
+    // Зареждаме съдържание при първоначално зареждане на страницата
+    
+    loadContent(window.location.pathname);
+
+});
+
+    </script>
 </body>
 </html>
-
-<!-- markdown
----
-layout: default
-title: About
-permalink: /about/
----
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll -->

@@ -1,4 +1,6 @@
-aboutSkillAnimationRotation();
+if (window.location.pathname == '/about/') {
+    aboutSkillAnimationRotation();
+}
 function aboutSkillAnimationRotation(){
 
     let firstArticle = document.querySelector('article');
@@ -26,14 +28,15 @@ function aboutSkillAnimationRotation(){
     nextBtn.onclick = () => {
         active += 1;
         setSlider();
+        // openPDF();
     }
     prevBtn.onclick = () => {
         active -= 1;
         setSlider();
+        // openPDF();
     }
     
     const setSlider = () => {
-
         if (!isMobileDevice()) {
             const main = document.querySelector('main');
             main.removeEventListener('mouseenter', mouseMove);
@@ -70,9 +73,10 @@ function aboutSkillAnimationRotation(){
             
             },2000);
         }
-        
+        openPDF();
     }
     setSlider();
+    
     
     const setDiameter = () => {
         let slider = document.querySelector('.slider');
@@ -86,8 +90,6 @@ function aboutSkillAnimationRotation(){
     window.addEventListener('resize', () => {
         setDiameter();
     })
-    
-    
 }
 
 
