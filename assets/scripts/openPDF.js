@@ -4,6 +4,13 @@ function openPDF(){
             const certificateButton = document.querySelectorAll('.item.active .certificateButton');
             const pdfViewer = document.getElementById('pdfViewer');
             const mainElement = document.querySelector('main');
+            const hidingButtonPDFElement = document.querySelector('.hidingButtonPDF');
+
+            hidingButtonPDFElement.addEventListener('click', () => {
+                mainElement.style.display = 'block';
+                pdfViewer.style.display = 'none';
+                hidingButtonPDFElement.style.display = 'none';
+            }, {ones: true})
         
             certificateButton.forEach(button => button.addEventListener('click', (event) => {
             
@@ -22,6 +29,7 @@ function openPDF(){
                     }
                     mainElement.style.display = 'none';
                     pdfViewer.style.display = 'block';
+                    hidingButtonPDFElement.style.display = 'block';
                 }, (reason) => {
                     console.error(reason);
                 });

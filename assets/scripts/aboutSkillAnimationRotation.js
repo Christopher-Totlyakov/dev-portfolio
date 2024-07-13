@@ -17,6 +17,7 @@ function aboutSkillAnimationRotation(){
     let lastPosition = items.length - 1;
     let firstPosition = 0;
     let active = 0;
+    let timeoutId = null;
 
     let listElement = document.querySelector('.slider .list');
     let logoURLarray = listElement.getAttribute('data-info').split(' ');
@@ -66,12 +67,15 @@ function aboutSkillAnimationRotation(){
         if(active == firstPosition) prevBtn.classList.add('d-none');
         
         if (!isMobileDevice()) {
-            setTimeout(()=>{
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+            timeoutId = setTimeout(()=>{
                 main.addEventListener('mouseenter', mouseMove);
                 console.log('body');
                 document.addEventListener('mousemove', followMouse);
             
-            },2000);
+            },1500);
         }
         openPDF();
     }

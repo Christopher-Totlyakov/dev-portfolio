@@ -321,3 +321,19 @@
             margin: 0 0 0 0;
             text-shadow: 0 0 10px black, 2px 2px 5px red, -2px -2px 5px blue;
         }
+
+        .hidingButtonPDF{
+            display: none;
+            position: absolute;
+            top: 5%;
+            left: 7%;
+            padding: 2.5em 1.5em;
+            border-radius: 50%;
+            background-color: #00000096;
+            font-size: 18px;
+            border: 2px dashed white;
+            color: white;
+        }
+
+       
+        
