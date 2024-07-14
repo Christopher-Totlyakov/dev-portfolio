@@ -1,5 +1,5 @@
 function openPDF(){
-    if (isMobileDevice() && window.location.pathname == '/about/') {
+    if (isMobileDevice() && window.location.pathname == '/skills/') {
         
             const certificateButton = document.querySelectorAll('.item.active .certificateButton');
             const pdfViewer = document.getElementById('pdfViewer');

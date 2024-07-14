@@ -44,11 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(html => {
                 
                 mainContent.innerHTML = new DOMParser().parseFromString(html, 'text/html').getElementById('content').innerHTML;
-                if (url == '/index/') {
+                if (url == '/index/' || url == '') {
                     main.style.backgroundColor = 'rgb(14, 17, 61)';
                 }else if (url == '/project/') {
                     main.style.backgroundColor = 'rgb(85, 75, 115)';
                 }else if (url == '/about/') {
+                    main.style.backgroundColor = 'rgb(24, 2, 51)'
+                }else if (url == '/skills/') {
                     main.style.backgroundColor = 'rgb(24, 2, 51)';
                     aboutSkillAnimationRotation();
                     openPDF();
@@ -82,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let x = rect.width / 2; // Центрирано по хоризонтал
             let y = rect.height / 2; // Центрирано по вертикал
             fetchPage(window.location.pathname, x, y);
+
         
     });
 });

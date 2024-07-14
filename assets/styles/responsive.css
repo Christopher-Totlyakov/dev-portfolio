@@ -48,7 +48,7 @@
     }
 
 
-    /* about */
+    /* skills */
     .slider .list .item .content{
         top: 5em;
     }
@@ -135,18 +135,17 @@
         width: 15px;
         height: 15px;
     }
-    #home-container, #about-pages, #project-pages{
+    #home-container, #skills-pages, #project-pages, #about-pages{
         height: 511px;
     }
 
-    /* about */
+    /* skills */
     .slider .list .item .content{
         margin: 0 0 0 20px;
 
     }
     .slider .list .item .content h2{
-        font-size: 4em;
-        left: 8%;
+        font-size: 3.5em;
     }
     .slider .list::after{
         right: -70px;
@@ -205,11 +204,15 @@
     header h4{
         font-size: 1.6em;
     }
+    .hidingButtonPDF{
+        padding: 1.5em 0.5em;
+        font-size: 16px;
+    }
     
 }
 
 @media (max-width: 320px) {
-    /* about */
+    /* skills */
     .slider .list .item .content h2{
         font-size: 3em;
     }
@@ -247,5 +250,9 @@
     }
     #phone-nav{
         margin: 0 20px 0 10px;
+    }
+    .hidingButtonPDF{
+        padding: 1.5em 0.5em;
+        font-size: 12px;
     }
 }

@@ -1,11 +1,11 @@
-if (window.location.pathname == '/about/') {
+if (window.location.pathname == '/skills/') {
     aboutSkillAnimationRotation();
 }
 function aboutSkillAnimationRotation(){
 
     let firstArticle = document.querySelector('article');
 
-    if (firstArticle && firstArticle.id !== 'about-pages') {
+    if (firstArticle && firstArticle.id !== 'skills-pages') {
         return;
     }
     
@@ -41,7 +41,6 @@ function aboutSkillAnimationRotation(){
         if (!isMobileDevice()) {
             const main = document.querySelector('main');
             main.removeEventListener('mouseenter', mouseMove);
-                console.log('about');
             document.removeEventListener('mousemove', followMouse);
             main.style.transform = `rotateX(0deg) rotateY(0deg)`;
             main.style.boxShadow = `0px 0px 20px rgba(64, 6, 112, 0.8)`;
