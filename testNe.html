@@ -3,59 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History Navigation Example</title>
+    <title>Masked Text Example</title>
     <style>
-        .content { margin: 20px; }
-        nav a { margin: 0 10px; }
+        .wrapper {
+            position: relative;
+            display: inline-block;
+            font-size: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        .text {
+            color: black; /* Основен цвят на текста */
+        }
+
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            color: white; /* Цвят на текста при преминаване през маската */
+            mask-image: url('/assets/images/pngegg\ \(3\).png'); /* Маска */
+            -webkit-mask-image: url('/assets/images/pngegg\ \(3\).png'); /* Маска за WebKit браузъри */
+            mask-size: cover;
+            -webkit-mask-size: cover;
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            background-color: green; /* Зелен цвят на маската */
+            mix-blend-mode: lighten; /* Смесване на цветовете */
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/" class="nav-link" data-content="Home content loaded.">Home</a>
-        <a href="/about" class="nav-link" data-content="About content loaded.">About</a>
-        <a href="/contact" class="nav-link" data-content="Contact content loaded.">Contact</a>
-    </nav>
-    <div class="content" id="content"></div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const contentElement = document.getElementById('content');
-    
-    function loadContent(url) {
-        // Симулираме зареждане на съдържание въз основа на URL
-        const link = document.querySelector(`a[href='${url}']`);
-        if (link) {
-            const dataContent = link.getAttribute('data-content');
-            contentElement.textContent = dataContent;
-        }
-    }
-
-    // Обработчик за клик на линковете за навигация
-    document.querySelectorAll('a.nav-link').forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const url = event.target.href;
-
-            // Променяме историята и зареждаме съдържанието
-            window.history.pushState({}, '', url);
-            loadContent(url);
-        });
-    });
-
-    // Обработчик за събитието popstate
-    window.addEventListener('popstate', () => {
-        console.log(window.location.pathname);
-        loadContent(window.location.pathname);
-        
-    });
-
-    
-    // Зареждаме съдържание при първоначално зареждане на страницата
-    
-    loadContent(window.location.pathname);
-
-});
-
-    </script>
+    <div class="wrapper">
+        <div class="text">Това е примерен текст</div>
+        <div class="mask">Това е примерен текст</div>
+    </div>
 </body>
 </html>

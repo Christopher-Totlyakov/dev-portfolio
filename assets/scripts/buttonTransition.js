@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }else if (url == '/project/') {
                     main.style.backgroundColor = 'rgb(85, 75, 115)';
                 }else if (url == '/about/') {
-                    main.style.backgroundColor = 'rgb(24, 2, 51)'
+                    main.style.backgroundColor = 'rgb(10, 7, 52)'
                 }else if (url == '/skills/') {
                     main.style.backgroundColor = 'rgb(24, 2, 51)';
                     aboutSkillAnimationRotation();

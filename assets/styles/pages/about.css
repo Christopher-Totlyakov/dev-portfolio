@@ -1,3 +1,58 @@
 #about-pages{
+    position: relative;
     height: 511.2px;
+} 
+#about-pages h1{
+    margin: 0.5em 0em 0 1em;
+    position: relative;
+    z-index: 1;
+    font-size: 3.2em;
+}
+ .container {
+    font-weight: bold;
+    position: relative;
+    width: 500px; /* Ширината на контейнера */
+    height: 360px;
+    margin: 0 auto; /* Центриране на контейнера */
+    font-size: 1.5em; /* Размер на шрифта */
+    text-indent: 1.5em; /* Отстъп за първия ред */
+    text-align: justify;
+    top: -10%;
+}
+
+.mask-introduction {
+    text-shadow: 2px 4px 10px rgb(255, 255, 255),
+                 2px 4px 5px rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 360px;
+    background-color: rgb(101, 115, 255); /* Цвят на запълване */
+    mask-image: url('/assets/images/pngegg (3).png'); /* Стандартна маска */
+    -webkit-mask-image: url('/assets/images/pngegg (3).png'); /* WebKit маска */
+    mask-size: cover; /* Разтегляне на маската */
+    -webkit-mask-size: cover; /* Разтегляне на маската за WebKit */
+    mask-repeat: no-repeat; /* Маската не се повтаря */
+    -webkit-mask-repeat: no-repeat; /* Маската не се повтаря за WebKit */
+    color: rgb(144, 0, 201); /* Цвят на текста при преминаване през маската */
+}
+
+.introduction {
+    text-shadow: 2px 4px 10px rgb(101, 115, 255),
+                 2px 4px 5px rgb(101, 115, 255);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white; 
+}
+
+.main-image{
+    fill: yellow;
 }
