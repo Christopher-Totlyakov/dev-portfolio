@@ -3,6 +3,9 @@
     #home-container{
         gap: 10px;
     }
+    #about-pages .main-image-container{
+        top: -64%;
+    }
 }
 
 @media (max-width: 800px) {
@@ -107,6 +110,10 @@
     }
     .main-nav li a{
         margin-left: 1em;
+    }
+    /* about */
+    #about-pages .main-image-container{
+        top: -60%;
     }
 }
 @media (max-width: 500px) {
