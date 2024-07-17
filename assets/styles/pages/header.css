@@ -2,7 +2,7 @@ header{
     position: relative;
     display: flex;
     padding: 2em 2em 1em 2em;
-    z-index: 1;
+    z-index: 99;
 }
 header::before{
     content: "";
@@ -100,9 +100,9 @@ header > h4{
 
 .menu-box{
     position: absolute;
-    height: 450%;
-    width: 40%;
-    background-color: #ad3ac49c;
+    height: 300px;
+    width: 150px;
+    background-color: #ad3ac4c9;
     z-index: 1;
     background-position: left;
     right: 0;
@@ -111,7 +111,7 @@ header > h4{
     opacity: 0;
     display: none;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     border: 2px solid white;
 }
 .transition-exit {
@@ -147,7 +147,7 @@ header > h4{
 .menu-box > ul a{
     padding: 0;
    margin: 0 1em 0 0.5em;
-   font-size: 1.6em;
+   font-size: 1.3em;
 }
 
 .menu-box ul li{

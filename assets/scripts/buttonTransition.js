@@ -1,6 +1,5 @@
-if (window.location.pathname != '/about/') {
-    ButtonTransition();
-}
+ButtonTransition();
+
 
 function ButtonTransition(){
     // document.addEventListener("DOMContentLoaded", () => {
