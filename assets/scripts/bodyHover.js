@@ -3,7 +3,7 @@
 const main = document.querySelector('main');
 
 function isMobileDevice() {
-    return window.innerWidth <= 768; // Можете да промените прага според нуждите си
+    return window.innerWidth <= 768; 
     
 }
 let mouseMove = () => {

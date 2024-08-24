@@ -23,7 +23,7 @@ function openPDF(){
             function loadPDF(url) {
                 const loadingTask = pdfjsLib.getDocument(url);
                 loadingTask.promise.then((pdf) => {
-                    pdfViewer.innerHTML = ''; // Clear previous content
+                    pdfViewer.innerHTML = '';
                     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
                         renderPage(pdf, pageNum);
                     }

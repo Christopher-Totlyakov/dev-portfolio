@@ -32,7 +32,6 @@ function ButtonTransition(){
                     main.style.opacity = '0';
 
                 let url = `/${tab}/`;
-                 // Актуализираме URL адреса с HTML5 History API
                  history.pushState({}, '', url);//
                     fetchPage(url, x, y);
                 }, { once: true });
@@ -80,13 +79,12 @@ function ButtonTransition(){
                     console.error('Error fetching page:', error);
                 });
         }
-         // Обработчик за събитието popstate
         window.addEventListener('popstate', () => {
 
 
                 let rect = main.getBoundingClientRect();
-                let x = rect.width / 2; // Центрирано по хоризонтал
-                let y = rect.height / 2; // Центрирано по вертикал
+                let x = rect.width / 2; 
+                let y = rect.height / 2; 
                 fetchPage(window.location.pathname, x, y);
 
 

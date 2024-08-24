@@ -1,4 +1,4 @@
-if (window.location.pathname == '/about/') {
+if (window.location.pathname == '/about/' || window.location.pathname == '/about') {
     moreInfoAbout();
 }
 function moreInfoAbout(){
@@ -17,7 +17,7 @@ function moreInfoAbout(){
             spotElements.forEach((element, index) => {
                 setTimeout(() => {
                     element.style.display = 'block';
-                }, 300 * index); // Увеличаваме времето за забавяне с индекса и 500ms
+                }, 300 * index);
             });
             timeoutP = setTimeout(() => {
                 pElements.forEach(p => p.style.display = 'block');
@@ -33,7 +33,7 @@ function moreInfoAbout(){
                 setTimeout(() => {
                     element.style.display = 'none';
                     skillsButtonElements.style.display = 'none';
-                }, 300 * index); // Увеличаваме времето за забавяне с индекса и 500ms
+                }, 300 * index); 
             });
         }
 

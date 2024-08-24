@@ -1,4 +1,6 @@
-if (window.location.pathname == '/skills/') {
+
+
+if (window.location.pathname == '/skills/' || window.location.pathname == '/skills') {
     aboutSkillAnimationRotation();
 }
 function aboutSkillAnimationRotation(){
@@ -71,7 +73,6 @@ function aboutSkillAnimationRotation(){
             }
             timeoutId = setTimeout(()=>{
                 main.addEventListener('mouseenter', mouseMove);
-                console.log('body');
                 document.addEventListener('mousemove', followMouse);
             
             },1500);
