@@ -10,6 +10,7 @@ function openPDF(){
                 mainElement.style.display = 'block';
                 pdfViewer.style.display = 'none';
                 hidingButtonPDFElement.style.display = 'none';
+                setDiameter();
             }, {ones: true})
         
             certificateButton.forEach(button => button.addEventListener('click', (event) => {
